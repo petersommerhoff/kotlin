@@ -9,7 +9,7 @@ import java.util.*
  * Generate a random number between 0 and 49 and checks in which range it is.
  */
 fun main(args: Array<String>) {
-    val random = Random().nextInt(50)
+    val random = Random().nextInt(50) + 1
 
     when (random) {
         in 1..10 -> println("In 1 to 10: $random")
