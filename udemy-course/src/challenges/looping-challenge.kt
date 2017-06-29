@@ -8,10 +8,10 @@ package challenges
  */
 fun main(args: Array<String>) {
 
-    var sum = 0
-    for (i in 100..100000) {
+    var sum = 0L
+    for (i in 100..100000L) {
         sum += i
     }
 
-    println(sum) // Result: 705077754
+    println(sum) // Result: 5000045050
 }
