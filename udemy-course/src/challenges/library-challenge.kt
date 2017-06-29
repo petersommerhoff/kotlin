@@ -27,6 +27,13 @@ abstract class InventoryItem(open val title: String,
 
     // If you want, you can also add a returnItem() method so that you can also un-borrow items.
 
+
+    override fun toString(): String {
+        return "InventoryItem(title='$title', genre='$genre', publicationYear=$publicationYear, borrowed=$borrowed)"
+    }
+
+    abstract fun copy(): InventoryItem
+
 }
 
 // A book will be not borrowed by default.
@@ -39,6 +46,13 @@ class LibraryBook(override val title: String,
     fun read() {
         println("Reading a book by $author...")
     }
+
+    override fun copy(): InventoryItem {
+        val copy = LibraryBook(title, author, genre, publicationYear)
+        copy.borrowed = this.borrowed;
+
+        return copy
+    }
 }
 
 // A DVD will also be not borrowed by default.
@@ -49,5 +63,12 @@ class LibraryDVD(override val title: String,
 
     fun watch() {
         println("Watching $title...")
+    }
+
+    override fun copy(): InventoryItem {
+        val copy = LibraryDVD(title, genre, length, publicationYear)
+        copy.borrowed = this.borrowed;
+
+        return copy
     }
 }
