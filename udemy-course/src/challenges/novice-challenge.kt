@@ -8,14 +8,26 @@ package challenges
  */
 fun main(args: Array<String>) {
 
-    val books = arrayListOf("Kotlin in Action", "Kotlin For Android Developers", "The Phoenix Project")
+    val myBookArrayList: ArrayList<String> = arrayListOf(
+            "In Search of Lost Time",
+            "Ulysses",
+            "Don Quixote",
+            "The Great Gatsby",
+            "One Hundred Years of Solitude",
+            "Moby Dick",
+            "War and Peace",
+            "Lolita",
+            "Hamlet",
+            "The Catcher in the Rye"
+    )
 
-    for (book in books) {
+    for (book in myBookArrayList) {
         if (book.contains('e')) {
-            for (character in book) {
-                println(character)
+            for (myChar in book) {
+                println(myChar)
             }
+            println("#######################################################################")
         }
-        println()
+
     }
 }
